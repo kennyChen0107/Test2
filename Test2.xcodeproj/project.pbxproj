@@ -14,6 +14,12 @@
 		B93AD3461AB1831000CB51AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B93AD3451AB1831000CB51AF /* Images.xcassets */; };
 		B93AD3491AB1831000CB51AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93AD3471AB1831000CB51AF /* LaunchScreen.xib */; };
 		B93AD3551AB1831000CB51AF /* Test2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD3541AB1831000CB51AF /* Test2Tests.m */; };
+		B93AD3601AB1961200CB51AF /* FGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD35F1AB1961200CB51AF /* FGTextView.m */; };
+		B93AD3711AB28EAC00CB51AF /* InputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD3701AB28EAC00CB51AF /* InputToolBar.m */; };
+		B93AD3771AB2B8AF00CB51AF /* FGWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD3761AB2B8AF00CB51AF /* FGWebView.m */; };
+		B93AD37B1AB66F0300CB51AF /* CollectionViewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD3791AB66F0300CB51AF /* CollectionViewImageCell.m */; };
+		B93AD37C1AB66F0300CB51AF /* CollectionViewImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B93AD37A1AB66F0300CB51AF /* CollectionViewImageCell.xib */; };
+		B93AD3841AB66F9900CB51AF /* CollectionViewTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AD3831AB66F9900CB51AF /* CollectionViewTextCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,17 @@
 		B93AD34E1AB1831000CB51AF /* Test2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93AD3531AB1831000CB51AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B93AD3541AB1831000CB51AF /* Test2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test2Tests.m; sourceTree = "<group>"; };
+		B93AD35E1AB1961200CB51AF /* FGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGTextView.h; sourceTree = "<group>"; };
+		B93AD35F1AB1961200CB51AF /* FGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGTextView.m; sourceTree = "<group>"; };
+		B93AD36F1AB28EAC00CB51AF /* InputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputToolBar.h; sourceTree = "<group>"; };
+		B93AD3701AB28EAC00CB51AF /* InputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputToolBar.m; sourceTree = "<group>"; };
+		B93AD3751AB2B8AF00CB51AF /* FGWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FGWebView.h; sourceTree = "<group>"; };
+		B93AD3761AB2B8AF00CB51AF /* FGWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FGWebView.m; sourceTree = "<group>"; };
+		B93AD3781AB66F0300CB51AF /* CollectionViewImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewImageCell.h; sourceTree = "<group>"; };
+		B93AD3791AB66F0300CB51AF /* CollectionViewImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewImageCell.m; sourceTree = "<group>"; };
+		B93AD37A1AB66F0300CB51AF /* CollectionViewImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewImageCell.xib; sourceTree = "<group>"; };
+		B93AD3821AB66F9900CB51AF /* CollectionViewTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewTextCell.h; sourceTree = "<group>"; };
+		B93AD3831AB66F9900CB51AF /* CollectionViewTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewTextCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +102,17 @@
 				B93AD33D1AB1831000CB51AF /* AppDelegate.m */,
 				B93AD33F1AB1831000CB51AF /* ViewController.h */,
 				B93AD3401AB1831000CB51AF /* ViewController.m */,
+				B93AD3781AB66F0300CB51AF /* CollectionViewImageCell.h */,
+				B93AD3791AB66F0300CB51AF /* CollectionViewImageCell.m */,
+				B93AD37A1AB66F0300CB51AF /* CollectionViewImageCell.xib */,
+				B93AD3821AB66F9900CB51AF /* CollectionViewTextCell.h */,
+				B93AD3831AB66F9900CB51AF /* CollectionViewTextCell.m */,
+				B93AD35E1AB1961200CB51AF /* FGTextView.h */,
+				B93AD35F1AB1961200CB51AF /* FGTextView.m */,
+				B93AD36F1AB28EAC00CB51AF /* InputToolBar.h */,
+				B93AD3701AB28EAC00CB51AF /* InputToolBar.m */,
+				B93AD3751AB2B8AF00CB51AF /* FGWebView.h */,
+				B93AD3761AB2B8AF00CB51AF /* FGWebView.m */,
 				B93AD3421AB1831000CB51AF /* Main.storyboard */,
 				B93AD3451AB1831000CB51AF /* Images.xcassets */,
 				B93AD3471AB1831000CB51AF /* LaunchScreen.xib */,
@@ -201,6 +229,7 @@
 			files = (
 				B93AD3441AB1831000CB51AF /* Main.storyboard in Resources */,
 				B93AD3491AB1831000CB51AF /* LaunchScreen.xib in Resources */,
+				B93AD37C1AB66F0300CB51AF /* CollectionViewImageCell.xib in Resources */,
 				B93AD3461AB1831000CB51AF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B93AD37B1AB66F0300CB51AF /* CollectionViewImageCell.m in Sources */,
+				B93AD3601AB1961200CB51AF /* FGTextView.m in Sources */,
+				B93AD3711AB28EAC00CB51AF /* InputToolBar.m in Sources */,
+				B93AD3771AB2B8AF00CB51AF /* FGWebView.m in Sources */,
 				B93AD3411AB1831000CB51AF /* ViewController.m in Sources */,
 				B93AD33E1AB1831000CB51AF /* AppDelegate.m in Sources */,
 				B93AD33B1AB1831000CB51AF /* main.m in Sources */,
+				B93AD3841AB66F9900CB51AF /* CollectionViewTextCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
