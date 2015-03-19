@@ -14,7 +14,7 @@
 {
     self = [super init];
     if(self){
-        NSString *html = @"<html><style type='text/css'>html,body{overflow:hidden;}</style><script type='text/javascript'>function clickFunction(){window.location='click-call:runObjMethod';}function callObjFunction(){window.location='js-call:runObjMethod';}</script><body id='bodyonline'><div id='content' contenteditable='true' onKeyDown='callObjFunction()' onClick='clickFunction()'> </div></body></html>";
+        NSString *html = @"<html><style type='text/css'>html,body{top:0;overflow:hidden;}</style><script type='text/javascript'>function clickFunction(){window.location='click-call:runObjMethod';}function callObjFunction(){window.location='js-call:runObjMethod';}</script><body id='bodyonline'><div id='content' contenteditable='true' onKeyDown='callObjFunction()' onClick='clickFunction()'> </div></body></html>";
         NSString *docsFolder = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
         NSString *filename = [docsFolder stringByAppendingPathComponent:@"index.html"];
         
@@ -24,6 +24,8 @@
         NSURL *url = [NSURL fileURLWithPath:filename];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         _webView = [[FGWebView alloc] init];
+        [_webView setOpaque:false];
+        [_webView setBackgroundColor:[UIColor lightGrayColor]];
         _webView.scrollView.scrollEnabled = NO;
         [_webView removeInputAccessoryView];
         _webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

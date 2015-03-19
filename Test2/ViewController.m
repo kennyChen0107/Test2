@@ -26,6 +26,7 @@
     [super viewDidLoad];
     dict = [[NSMutableDictionary alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowFrame:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHidden:) name:UIKeyboardWillHideNotification object:nil];
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     [flowLayout setItemSize:CGSizeMake(80 , 33)];
@@ -85,6 +86,7 @@
     [self.mainCollectionView setFrame:CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height)];
     //鍵盤消失timer停止
     [timer invalidate];
+    [self dumpScrollviewInfo];
 }
 
 -(void)keyboardWillShowFrame:(NSNotification*)notif{
@@ -100,8 +102,43 @@
 
     //timer是為了偵測html編輯器的游標位置，抓出目前格式設定的狀態
     timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(checkSelection:) userInfo:nil repeats:YES];
+    
+    
+    NSDictionary* info = [notif userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    NSString *code = [NSString stringWithFormat:@"window.innerHeight = $(window).height()-%f;", kbSize.height];
+    [targetFGTextView.webView stringByEvaluatingJavaScriptFromString:code];
+//    [targetFGTextView.webView.scrollView setContentOffset:CGPointMake(0, -kbSize.height) animated:YES];
+//    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+//    targetFGTextView.webView.scrollView.contentInset = contentInsets;
+//    targetFGTextView.webView.scrollView.scrollIndicatorInsets = contentInsets;
 }
 
+- (void)keyboardDidShow
+{
+    UIScrollView *scrollview = targetFGTextView.webView.scrollView;
+    [self dumpScrollviewInfo];
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0);
+    targetFGTextView.webView.scrollView.contentInset = contentInsets;
+    targetFGTextView.webView.scrollView.scrollIndicatorInsets = contentInsets;
+    targetFGTextView.webView.scrollView.contentOffset = CGPointMake(0, 0);
+    
+}
+
+- (void)readjustWebviewScroller {
+    targetFGTextView.webView.scrollView.bounds = targetFGTextView.webView.bounds;
+    
+}
+
+
+- (void)dumpScrollviewInfo
+{
+    UIEdgeInsets insets = targetFGTextView.webView.scrollView.contentInset;
+    
+    NSLog(@"hydrated contentInset %@", NSStringFromUIEdgeInsets(insets));
+    NSLog(@"hydrated scrollIndicatorInsets %@", NSStringFromUIEdgeInsets(targetFGTextView.webView.scrollView.scrollIndicatorInsets)) ;
+    NSLog(@"hydrated scrollContentOffset %@", NSStringFromCGPoint(targetFGTextView.webView.scrollView.contentOffset));
+}
 
 #pragma mark Timer Method
 - (void)checkSelection:(id)sender {
